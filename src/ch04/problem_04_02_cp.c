@@ -41,7 +41,8 @@ int main(int argc, char *argv[]) {
         }
         // Test if all bytes read are zeros
         Boolean allZero = TRUE;
-        for (ssize_t i = 0; i < rd; ++i) {
+        ssize_t i;
+        for (i = 0; i < rd; ++i) {
             if (data[i] != 0) {
                 allZero = FALSE;
                 break;
