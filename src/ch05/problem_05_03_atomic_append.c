@@ -31,7 +31,8 @@ void atomic_append(const char *filename, size_t num_bytes) {
 
     /* Prepare the data */
     char data[num_bytes];
-    for (size_t i = 0; i < num_bytes; ++i) {
+    size_t i;
+    for (i = 0; i < num_bytes; ++i) {
         data[i] = '\0';
     }
 
@@ -63,7 +64,8 @@ void non_atomic_append(const char *filename, size_t num_bytes) {
 
     /* Prepare the data */
     char data[num_bytes];
-    for (size_t i = 0; i < num_bytes; ++i) {
+    size_t i;
+    for (i = 0; i < num_bytes; ++i) {
         data[i] = '\0';
     }
 

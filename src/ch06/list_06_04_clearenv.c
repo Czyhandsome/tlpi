@@ -14,7 +14,8 @@ int main(int argc, char *argv[]) {
         errExit("setenv");
     }
 
-    for (int i = 1; i < argc; ++i) {
+    int i;
+    for (i = 1; i < argc; ++i) {
         if (putenv(argv[i]) != 0) {
             errExit("putenv: %s", argv[i]);
         }
@@ -22,7 +23,8 @@ int main(int argc, char *argv[]) {
 
     unsetenv("BYE");
 
-    for (char **ep = environ; *ep != NULL; ++ep) {
+    char **ep;
+    for (ep = environ; *ep != NULL; ++ep) {
         puts(*ep);
     }
 

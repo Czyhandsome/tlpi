@@ -29,7 +29,8 @@ int main(int argc, char *argv[]) {
     ssize_t numRead;
     ssize_t numWritten;
     off_t offset;
-    for (int ap = 2; ap < argc; ++ap) {
+    int ap;
+    for (ap = 2; ap < argc; ++ap) {
         switch (argv[ap][0]) {
             /* Display bytes at current offset, as text */
             case 'r':
@@ -49,7 +50,8 @@ int main(int argc, char *argv[]) {
                     printf("%s: end-of-file\n", argv[ap]);
                 } else {
                     printf("%s: ", argv[ap]);
-                    for (int j = 0; j < numRead; ++j) {
+                    int j;
+                    for (j = 0; j < numRead; ++j) {
                         if (argv[ap][0] == 'r') {
                             printf("%c", isprint((unsigned char) buf[j] ?
                                                  buf[j] : '?'));

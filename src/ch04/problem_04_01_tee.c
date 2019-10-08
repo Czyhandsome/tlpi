@@ -47,7 +47,8 @@ int main(int argc, char *argv[]) {
     fds[0] = STDOUT_FILENO;
     /* open files */
     int num = 1;
-    for (int i = start_index; i < argc; ++i) {
+    int i;
+    for (i = start_index; i < argc; ++i) {
         const char *filename = argv[i];
         // open i-th file for write
         // -rw-rw-r--
@@ -66,7 +67,7 @@ int main(int argc, char *argv[]) {
             errExit("read from stdin");
         }
         // Write to all opened files
-        for (int i = 0; i < NUM_FILES + 1; ++i) {
+        for (i = 0; i < NUM_FILES + 1; ++i) {
             if (write(fds[i], buf, rd) != rd) {
                 errExit("write to file[%d] fds[%d]", i, fds[i]);
             }
@@ -74,7 +75,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Close files except STDIN
-    for (int i = 1; i < NUM_FILES + 1; ++i) {
+    for (i = 1; i < NUM_FILES + 1; ++i) {
         if (close(fds[i]) == -1) {
             errExit("close file [%d]", fds[i]);
         }

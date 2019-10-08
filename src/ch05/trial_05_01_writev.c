@@ -39,7 +39,8 @@ int main() {
 #define STR_SIZE 100
     char str[100];
     const char *template = "abc";
-    for (int i = 0; i < 99; ++i) {
+    int i;
+    for (i = 0; i < 99; ++i) {
         str[i] = template[i % 3];
     }
     str[99] = '\0';
