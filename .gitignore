@@ -1,0 +1,11 @@
+CMakeFiles
+cmake-build-debug
+
+*.cbp
+Makefile
+cmake_install.cmake
+CMakeCache.txt
+
+*.out
+.idea
+.DS_Store
