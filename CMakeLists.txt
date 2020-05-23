@@ -15,5 +15,6 @@ foreach (exec ${EXECUTABLE_APPS})
     STRING(REGEX MATCH
             "[^ /]+\\.c"
             NAME ${exec})
+    SET(NAME ${NAME}.out)
     add_executable(${NAME} ${exec} ${LIBS})
 endforeach ()
